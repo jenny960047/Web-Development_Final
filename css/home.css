@@ -1,0 +1,540 @@
+body{
+  margin: 0;
+  font-family: coco, "Microsoft JhengHei", sans-serif;
+}
+
+@font-face {
+  font-family: coco-big;
+  src: local("Mamelon-5-Hi-Regular");
+}
+@font-face {
+  font-family: coco;
+  src: local("Mamelon-3.5-Hi-Regular");
+}
+@font-face {
+  font-family: coco-light;
+  src: local("Mamelon-3-Hi-Regular"),
+  local("msjhbd");
+  font-weight: bold;
+}
+
+header{
+  background-color: white;
+  height: 80px;
+}
+.header-container{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.logo{
+  float: left;
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+  padding-top: 3px;
+}
+.logo #bulb{
+  width: 35px;
+}
+.logo a{
+  letter-spacing:4px;
+  font-size: 25px;
+  margin-left: 12px;
+  color: #45729D;
+  text-decoration: none;
+  font-family: coco-big;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#left-menu {
+  margin:35px 0px 0px 10px;
+  display: inline-block;
+  font-size: 14px;
+}
+#left-menu li {
+  position: relative;
+  white-space: nowrap;
+  margin-right:-30px;
+}
+#left-menu > li {
+  float: left;
+}
+#left-menu a {
+  color: #808080;
+  display: block;
+  padding: 0 30px;
+  text-decoration: none;
+}
+#left-menu a:hover {
+  color: #45729D;
+}
+#left-menu li:hover > a {
+  color: #45729D;
+}
+#left-menu ul {
+  position: absolute;
+  z-index: 99;
+  left: -1px;
+  top: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0,.12);
+}
+#left-menu ul li {
+  background-color: white;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: #f2f2f2 1px solid;
+}
+#left-menu ul li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+#left-menu ul li:first-child {
+  padding-top: 20px;
+}
+#left-menu ul {
+  visibility: hidden;
+  opacity: 0;
+}
+#left-menu li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  left: -1px;
+  border-right: 5px;
+}
+
+/*登入前*/
+.header-right-before > #before-login > #right-menu{
+  margin-top:35px;
+}
+.header-right-before > #before-login > #right-menu li{
+  display: inline;
+}
+.header-right-before > #before-login > #right-menu li a{
+  text-decoration: none;
+  color:#808080;
+  font-size:14px;
+}
+.header-right-before > #before-login > #right-menu ul li a:hover{
+  color: #45729D;
+}
+.header-right-before > #after-login{
+    display: none;
+}
+
+/*登入後*/
+.header-right-after > #before-login{
+    display: none;
+}
+.header-right-after > #after-login > #right-menu {
+  margin: 28px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.header-right-after > #after-login > #right-menu li {
+  position: relative;
+  white-space: nowrap;
+  margin-right:-30px;
+}
+.header-right-after > #after-login > #right-menu > li {
+  float: left;
+  /* 只有第一層是靠左對齊*/
+}
+.header-right-after > #after-login > #right-menu a {
+  color: #808080;
+  display: block;
+  padding: 0 30px;
+  text-decoration: none;
+}
+.header-right-after > #after-login > #right-menu a:hover {
+  /* 滑鼠滑入按鈕變色*/
+  color: #45729D;
+}
+.header-right-after > #after-login > #right-menu li:hover > a {
+  /* 滑鼠移入次選單上層按鈕保持變色*/
+  color: #45729D;
+}
+.header-right-after > #after-login > #right-menu ul {
+  position: absolute;
+  z-index: 99;
+  left: -1px;
+  top: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0,.12);
+}
+.header-right-after > #after-login > #right-menu ul li {
+  background-color: white;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: #f2f2f2 1px solid;
+}
+.header-right-after > #after-login > #right-menu ul li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+.header-right-after > #after-login > #right-menu ul li:first-child {
+  padding-top: 20px;
+  border-radius: 10px 10px 0px 0px;
+}
+.header-right-after > #after-login > #right-menu ul {
+  visibility: hidden;
+  opacity: 0;
+}
+.header-right-after > #after-login > #right-menu li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  left: -1px;
+  border-right: 5px;
+}
+#mail{
+  filter: invert(52%) sepia(10%) saturate(12%) hue-rotate(1deg) brightness(95%) contrast(93%);
+  width: 15px;
+}
+#user{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#triangle{
+  filter: invert(52%) sepia(10%) saturate(12%) hue-rotate(1deg) brightness(95%) contrast(93%);
+  width: 10px;
+}
+#triangle:hover{
+  filter: invert(40%) sepia(67%) saturate(389%) hue-rotate(169deg) brightness(89%) contrast(87%);
+}
+#mail:hover{
+  filter: invert(40%) sepia(67%) saturate(389%) hue-rotate(169deg) brightness(89%) contrast(87%);
+}
+nav{
+    background: white;
+    line-height: 3em;
+    padding-top: 10px;
+}
+.select-bar ul{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+.select-bar ul li{
+    display: inline;
+    margin-right: 50px;
+}
+.select-bar li a{
+    text-decoration: none;
+    color: #808080;
+    font-size: 14px;
+}
+.select-bar li a:hover{
+    color: #45729D;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.bar{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bar-right{
+    display: flex;
+    align-items: center;
+}
+.bar-right span{
+    color: #45729D;
+    font-weight: bold;
+}
+
+select{
+    width: 120px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px #e6e6e6 solid;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+#a{
+    margin-right: 2px;
+}
+
+.bar-left button{
+    width: 40px;
+    height: 30px;
+    font-size: 2px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar-left button:hover{
+  background-color: #45729D;
+  color: white; 
+  transition-duration: 0.3s;
+}
+
+
+
+
+.section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    width: 238px;
+    border-radius: 10px;
+    margin: 15px 5px 5px 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0,.12);
+}
+.card-loading{
+    width: 238px;
+    margin: 15px 5px 5px 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0,.12)
+}
+.img{
+    height: 150px;
+}
+.img img{
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.info{
+    margin: 10px;
+}
+.tt a{
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 24px;
+    color: black;
+    font-family: "Microsoft JhengHei";
+    font-weight: bold;
+    letter-spacing: .05rem;
+}
+
+.tt a:hover{
+    color: #45729D;
+}
+
+.author{
+    margin-top: 5px;
+    display: flex;
+    font-size: 10px;
+    font-family: "Microsoft JhengHei";
+}
+.author a{
+    margin-left: 5px;
+    text-decoration: none;
+    color: #45729D;
+
+}
+.description{
+    font-family: "Microsoft JhengHei";
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 22px;
+    line-height: 20px;
+    letter-spacing: .05rem;
+}
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+
+.page a{
+    padding-top: 4px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    background-color: #e6e6e6;
+    color: black;
+}
+.page a:hover{
+    background-color: #45729D;
+    color: white;
+    transition-duration: 0.3s;
+}
+
+#now{
+    background-color: #45729D;
+    color: white;
+    border: 1px #45729D solid;
+}
+.footer{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+.footer-left{
+  display: flex;
+}
+.im{
+  margin-right: 120px;
+}
+.im p{
+  font-size: 14px;
+}
+.im a{
+  display: block;
+  text-decoration: none;
+  line-height: 24px;
+  font-size: 12px;
+  color: #808080;
+}
+.im a:hover{
+  color: #45729D;
+}
+.logo-footer{
+  margin-left: 315px;
+  display: flex;
+  align-items: center;
+}
+.logo-footer #bulb{
+  width: 35px;
+}
+.logo-footer a{
+  letter-spacing:4px;
+  font-size: 25px;
+  color: #45729D;
+  margin-left: 12px;
+  text-decoration: none;
+  font-family: coco-big;
+}
+#copyright{
+  margin-top: 10px;
+  margin-left: 162px;
+  font-size: 12px;
+}
+:root{
+    --loading-gray: #ededed;
+}
+.card-loading .img,
+.card-loading .tt,
+.card-loading .author,
+.card-loading .description{
+    background-color: var(--loading-gray);
+    background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, .5) 50%,
+        rgba(255, 255, 255, 0) 60%
+        ) var(--loading-gray);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading{
+    to{
+        background-position-x: -20%;
+    }
+}
+.tt{
+    min-height: 1.8rem;
+    border-radius: 4px;
+}
+.author{
+    min-height: 1rem;
+    border-radius: 4px;
+}
+.description{
+    min-height: 5rem;
+    border-radius: 4px;
+}
+ul.slides{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+li.slide{
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s transform ease-in-out;
+    overflow: hidden;
+}
+.slide:nth-of-type(1){
+}
+.slide:nth-of-type(2){
+    left: 100%;
+}
+.slide:nth-of-type(3){
+    left: 200%;
+}
+.controls-visible{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+}
+
+.controls-visible label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 3px;
+    border: 2px solid #fff;
+}
+.slides input[type="radio"]:nth-of-type(1):checked ~
+.controls-visible label:nth-of-type(1){
+    background-color: #333;
+}
+.slides input[type="radio"]:nth-of-type(2):checked ~
+.controls-visible label:nth-of-type(2){
+    background-color: #333;
+}
+.slides input[type="radio"]:nth-of-type(3):checked ~
+.controls-visible label:nth-of-type(3){
+    background-color: #333;
+}
+.slides input[type="radio"]:nth-of-type(1):checked ~ .slide{
+    transform: translateX(0%);
+}
+.slides input[type="radio"]:nth-of-type(2):checked ~ .slide{
+    transform: translateX(-100%);
+}
+.slides input[type="radio"]:nth-of-type(3):checked ~ .slide{
+    transform: translateX(-200%);
+}
+
+.slides input[type="radio"]{
+    display: none;
+}
